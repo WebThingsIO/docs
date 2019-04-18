@@ -1,10 +1,14 @@
-# Smart Home Gateway v0.6 User Guide
-![Project Things by Mozilla](/images/ThingsGateway-Mozilla.png)
+# User Guide
+
+## WebThings Gateway for Raspberry Pi User Guide
+[WebThings Gateway](https://iot.mozilla.org/gateway) by Mozilla is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
+
+This guide assumes you have already followed the [Getting Started Guide](https://mozilla-iot.github.io/docs/gateway-getting-started-guide.html) to bring your gateway online.
 
 ## I. Introduction
 
 Congratulations on choosing to set up your own private Smart Home Gateway. This guide provides an overview of
-what is currently referred to as the “Things Gateway” by Mozilla. It is an alpha prototype, v0.6. Hereafter we will
+what is currently referred to as the “WebThings Gateway” by Mozilla. This guide overs release version 0.8. Hereafter we will
 usually just refer to it as the "gateway". 
 
 The gateway lets you directly monitor and control your home over the web. Unlike many smart home hubs and connected 
@@ -12,135 +16,19 @@ IoT devices on the market, your data is not stored or processed in the cloud. It
 The gateway can often bypass the need for you to purchase an IoT hub for each brand. And instead of downloading a 
 different app for each brand, you can manage everything from one place, using any web browser.
 
-This guide will explain how to set up your gateway, connect smart home devices, create rules to automate 
-your home, experiment with voice and text-based commands, and a few additional tips.
-
-### Things Gateway Running on Raspberry Pi
-
-The Things Gateway software can be installed onto an 8GB or larger microSD card which is inserted into a 
-Raspberry Pi. We recommend the latest model, such as the RPi 3 B+. You can optionally attach Zigbee and 
-Z-wave radios that connect to the RPi over USB. To run the gateway software on other devices, refer to the 
-"Supported Hardware" section of the project [wiki](https://github.com/mozilla-iot/wiki/wiki). Other than some 
-changes in installation and initial setup, most of this guide is agnostic to the actual gateway hardware. 
+This guide will explain how to customize your gateway, including connecting smart home devices, creating rules to automate 
+your home, experimenting with voice and text-based commands, and a few additional tips.
 
 The following image shows a typical collection of smart home devices, the top row shows the Raspberry Pi, power supply 
 and a Zigbee USB dongle. The bottom row shows a door sensor, smart plugs, smart bulb, and motion sensor.
 
 <img src="./images/image53.png" alt="smart home devices" width="400">
 
-### Flashing the microSD Card
+## II. Smartphone Application Convenience
 
-First download the Things Gateway image from [here](https://iot.mozilla.org/gateway/). We recommend using 
-the [etcher.io](https://www.balena.io/etcher/) program to flash the 
-image onto a microSD card (8GB or larger) that is inserted into your computer. Alternatively, some 
-[distributors](https://docs.iot-bus.com/en/latest/getting-started/iot-bus-getting-started-with-mozilla.html) 
-sell the Raspberry Pi with a microSD card that has been pre-flashed with the Mozilla Things 
-Gateway image. Once flashed, insert the microSD card into the Raspberry Pi.
+Currently there is no specific smartphone application for the gateway, but you can load your unique gateway url into a smartphone browser application and save it to your home screen, which makes it work just like any other application. 
 
-<img src="./images/image54.png" alt="uSD card" width="160">
-
-## II. First Time Setup
-
-In order for your Things Gateway to communicate with your home network, a one-time connection setup process must be completed.
-
-### Power Up
-
-Make sure the microSD card is plugged into the Raspberry Pi, and optionally plug USB dongles, such as 
-Zigbee and Z-wave, into one of the four USB ports. The additional USB dongles allow the gateway to communicate 
-with devices that don’t use Wi-Fi, Bluetooth, or other IP networking protocols.
-
-<img src="./images/image1.png" alt="power on gateway">
-
-Plug the gateway into a power outlet using at least a 2A USB power supply. (Cell phone charging USB power adapters 
-will not provide sufficient power to run a Raspberry Pi gateway.) After applying power, you will need to wait 2-3 minutes 
-for compressed software images to be unpacked, and for various install scripts to run, before proceeding to the next step.
-
-### Connect to Wi-Fi
-
-Using your laptop, connect to the Wi-Fi network called `Mozilla IoT Gateway`. 
-
-<img src="./images/image8.png" alt="Mozilla IoT Gateway SSID" width="300">
-
-(Note that it takes several minutes after first time power on before the network name will appear in the scanned 
-list of Wi-Fi networks.)
-
-Upon connecting to `Mozilla IoT Gateway`, a welcome screen will pop up automatically, showing a list of other 
-nearby Wi-Fi networks. Select your home Wi-Fi network from the list, and enter your Wi-Fi password. If successful, 
-this step will connect your gateway as a Wi-Fi client of your home network. Alternatively, you can directly connect 
-the gateway using an ethernet cable to your local area network (LAN), for example by plugging into a LAN port of 
-your home Wi-Fi router. 
-
-<img src="./images/image19.png" alt="SSID list" width="800">
-
-You can change the Wi-Fi network that the gateway is connected to by powering it up in a new location, where the 
-previous network is not accessbile. It will revert to broadcasting the `Mozilla IoT Gateway` network name, and you 
-can repeat the above steps. You can provision the gateway for as many different Wi-Fi networks as you want.
-
-**TIP**: If you are cnnnected to `Mozilla IoT Gateway` but you don’t see the welcome screen, you can try 
-typing http://192.168.220.1 into your web browser’s address bar to manually navigate to the page. If the page 
-still does not load, then you are not connected to the gateway. Check your Wi-Fi network and try again.
-
-### Choose Your Own Unique Web Address
-
-Your Mozilla Things Gateway should now be connected to your home network. To proceed, your computer will need 
-to be connected to the same network. 
-
-The next step is to give your gateway its own unique domain name and to create a user account to secure access 
-to it. Your smart home data are stored locally on your gateway, not in the cloud. Only you can access your 
-gateway to control your smart home devices safely and securely, whether at home or remote.
-
-Type `http://gateway.local` into your web browser’s address bar to find your gateway on your home network. 
-
-<img src="./images/image9.png" alt="gateway.local" width="600">
-
-If a web page does not load, you can type the IP address of the gateway instead. 
-
-<img src="./images/image25.png" alt="gateway IP address" width="600">
-
-You can determine the gateway IP address by pinging the hostname gateway.local from the command line terminal 
-of your computer. To open a terminal window using Microsoft Windows, type `cmd` into the search bar.
-
-<img src="./images/image38.png" alt="windows cmd" width="600">
-
-To open a terminal window using MacOS, type `terminal` into the search bar.
-
-<img src="./images/image39.png" alt="macos terminal" width="300">
-
-From the command line terminal, type: `ping gateway.local` and look for the IP address in the response.
-
-If using Windows 10, type: `ping -4 gateway.local`
-
-**TIP**: If `http://gateway.local` or `http://<IP_address>` can’t be loaded in your browser, check to make sure 
-your laptop is connected to the same home Wi-Fi network that you selected in the previous section. To make sure 
-the gateway is connected, you can log into your home Wi-Fi router to look up the gateway IP address. Look at the 
-router's DHCP client list and search for the name `gateway` or look for a MAC address starting with `b8:27:eb...`.
-
-<img src="./images/image55.png" alt="router DHCP client list" width="600">
-
-Once you have successfully connected to the gateway in your browser, a Welcome page will load.
-
-<img src="./images/image22.png" alt="create subdomain" width="800">
-
-At this step you need to think of a unique web address name that will hereafter be used to securely access your 
-Things Gateway over the Internet. Type your chosen name, enter your preferred email, and select “Create.”
-
-If you previously set up a Things Gateway subdomain, you can reclaim it by entering the same name and email. After this
-step successfully completes, you will receive an email asking you to confirm your address. Doing so will allow you 
-to "own" and continually renew this subdomain (automatically registered for you with LetsEncrypt), for as long as you want.
-
-### Create Your Own Unique User Account
-
-Finally, create an account which you will thereafter use to log in to your gateway. Now you can securely access your gateway 
-and manage its devices from any web browser, anywhere in the world. (Additional user accounts can be added later. 
-See `Settings => Users`, and follow a similar account creation process.)
-
-<img src="./images/image5.png" alt="create user account" width="800">
-
-### Bookmark Your Success!
-
-Congratulations if you made it through the setup process! 
-Keep in mind that each time you want to control and monitor the devices connected to your Things Gateway, you will need to 
-navigate to the web address you just created, which will be of the form `[your_subdomain].mozilla-iot.org`. 
+If you use Mozilla's tunneling service, your gateway url will be of the form `[your_subdomain].mozilla-iot.org`. 
 
 We recommend that you **bookmark** the web address on all devices that you have access to from home. 
 It is also handy to save your Things Gateway as a **web application on the home screen** of your phones and tablets.
@@ -171,11 +59,10 @@ temperature sensors, and more: remove tab from battery, or plug in battery, to p
 <img src="./images/image6.jpg" alt="sensor battery tab" width="250">
 
 **TIP**: Some devices come pre-paired with controllers or IoT hubs. First follow the manufacturers instructions to do 
-a **factory reset** on those devices before attempting to pair them with your Mozilla gateway. See the Appendix 
+a **factory reset** on those devices before attempting to pair them with your Mozilla gateway. See the Supported Devices wiki  
 for more tips on pairing new devices.
 
 When you are ready to add devices to your Things Gateway, we recommend that you provision devices one at a time. 
-First load your secure web address (format [your_subdomain].mozilla-iot.org) and log in to your account.
 
 From the main “Things” page, select the <img src="./images/image10.png" alt="plus" width="20">
 button at the bottom right corner. 
@@ -330,13 +217,13 @@ to scan new Add-ons in the list. You can submit requests for additional device s
 
 ## VII. Experiments
 
-You can try out experimental new features, like the Smart Assistant, by enabling them in Experiments.
+You can try out experimental new features, like the Smart Assistant, and Logging, by enabling them in Experiments.
 
-### Enable Smart Assistant
+### Enable Smart Assistant and Logging
 
-From the Settings menu, select Experiments, and then check the box to enable the Smart Assistant. 
+From the Settings menu, select Experiments, and then check the boxes to enable the Smart Assistant and Logging. 
 
-<img src="./images/image31.png" alt="enable experiments" width="800">
+<img src="./images/experiments.png" alt="enable experiments" width="800">
 
 ### Using the Smart Assistant
 
@@ -356,17 +243,24 @@ can understand a basic set of commands to turn devices on and off, set levels, s
 The first time you click on the microphone icon, your browser will ask for permission to use your computer’s microphone. 
 From the popup dialog, click the “Remember this decision” checkbox, then select “Allow”.
 
-Note that in the 0.6 gateway release, voice commands are currently processed using Google's voice assistant API, 
+Note that in the 0.8 gateway release, browser-based voice commands are processed using Google's voice assistant API, 
 so the audio strings are processed in the cloud. The speech-to-text result is passed back to your gateway. If you instead 
 type a command into the text field of the smart assistant screen, those commands are processed locally and do not 
 require a connection to the Internet.
 
+### Using Logging
+
+Once enabled, the logging page is visible in the main navigation menu. Any devices that can be logged will be visible from
+the configuration screen, accessed by clicking the plus icon in the lower right corner. Select the device you want to log, 
+the property you want to log, and duration of log data you want to store on your gateway.
+
+<img src="./images/log-temp.png" alt="log temp" width="800">
+
 ## VIII. Additional Settings
 
-Browse the other pages listed under the Settings menu in order to find additional configuration and capabilities 
-of the Things Gateway. 
+Browse the other pages listed under the Settings menu to find additional configuration and capabilities. 
 
-<img src="./images/image43.png" alt="settings menu" width="800">
+<img src="./images/settings.png" alt="settings menu" width="800">
 
 ### Domain
 
@@ -374,10 +268,17 @@ The default localhost name is gateway.local, but you can change it to match your
 
 <img src="./images/image42.png" alt="localhost name" width="800">
 
+### Network
+
+A Raspberry Pi gateway can connect to your local network using Wi-Fi or Ethernet. On the network configuration page you can 
+see which settings are active, and click either option to change the configuration. Be careful with these settings, because 
+if your gateway loses access to the local network, your ability to access the UI in a web browser will stop working.
+
+<img src="./images/network.png" alt="network settings" width="800">
+
 ### Users
 
-You can add as many user accounts as you like, so that everyone has their own unique login. Although all users have the 
-same access and control privileges in gateway v0.6, a future feature will be to allow lesser privileges to some users, 
+You can add as many user accounts as you like, so that everyone has their own unique login. Although all users currently have the same access and control privileges, a future feature will be to allow lesser privileges to some users, 
 such as children or guests.
 
 <img src="./images/image45.png" alt="user accounts" width="800">
@@ -386,9 +287,27 @@ Click the "(+)" icon to provision more user accounts.
 
 <img src="./images/image46.png" alt="add user" width="800">
 
+### Add-ons
+
+The gateway supports a unique and flexible Add-on framework that helps users tie legacy devices, non-IP devices, and other 
+non-standard devices into the web thing API framework. Only three add-ons are installed by default, and the rest must be 
+added manually by the user. Because the add-on upgrades are independent from the core gateway application, they can be 
+updated at any time.
+
+<img src="./images/addons.png" alt="add-ons" width="800">
+
+Click the "(+)" icon to install optional add-ons.
+
+<img src="./images/addon-discovery.png" alt="add-on discovery" width="800">
+
+Some add-ons require configuration in order to function (e.g., Pulse, Weather, ONVIF). Others work as soon as they are added 
+(e.g., Virtual Things). 
+
+<img src="./images/addon-config-pulse.png" alt="add-on config" width="800">
+
 ### Adapters
 
-The adapters page shows which of the Add-ons are currently installed and active. Go to the Add-ons page to add or remove 
+The Adapters page shows which of the Add-ons are currently installed and active. Go to the Add-ons page to add or remove 
 adapters that are shown on this page.
 
 <img src="./images/image44.png" alt="adapters" width="800">
@@ -396,7 +315,7 @@ adapters that are shown on this page.
 ### Updates
 
 Assuming your gateway is connected to the Internet, system updates will be applied automatically when a new 
-stable release is ready. As of the v0.6 release, new versions are being released approximately quarterly.
+stable release is ready. New versions are being released approximately quarterly.
 
 <img src="./images/image47.png" alt="updates" width="800">
 
@@ -411,7 +330,7 @@ whether or not an authorization has been enabled.
 
 On the "Developer" page you can enable ssh, for connecting directly to the Raspberry Pi console. The default 
 username is "pi", and the default password is "raspberry". If you decide to enable ssh, we recommend that you 
-immediately ssh into the RPi to change the default password. Type the command `$ passwd` and follow the prompts 
+immediately ssh into the RPi to change the default password. Type the password command `$ passwd` and follow the prompts 
 to change the pi user's password.
 
 <img src="./images/image49.png" alt="developer menu" width="800">
@@ -428,9 +347,15 @@ development tools.
 
 ## IX. Support
 
-For support, please sign up to our IoT Discourse forum (https://discourse.mozilla.org/c/iot) or email iot@mozilla.com or post issues on [github](https://github.com/mozilla-iot/gateway/issues). 
+For support, please sign up to our IoT Discourse forum (https://discourse.mozilla.org/c/iot) or email iot@mozilla.com 
+or join us on Mozilla IRC #iot channel 
+or post issues on [github](https://github.com/mozilla-iot/gateway/issues). 
 
-## Appendix: More on Pairing and Unpairing Smart Devices
+## Appendix: Tips on Pairing and Unpairing Smart Devices
 
-💡💡💡💡💡💡💡💡💡💡💡💡
-
+Although you typcially can follow manufacturer instructions to pair and unpair devices, there are additional tricks to 
+discovering devices. Some devices have a "chain link" or other button that you should click when you are ready to scan 
+for the new device. Other products have reset buttons that you have to hold for some period of time to reset the device. 
+Still others require multiple power cycles, double-button presses and various schemes. Unfortunately there is no common 
+approach across a broad spectrum of device makers! Our supported devices wiki will likely be your best bet to see methods 
+that have work for us.
