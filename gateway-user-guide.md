@@ -8,7 +8,7 @@ This guide assumes you have already followed the [Getting Started Guide](https:/
 ## I. Introduction
 
 Congratulations on choosing to set up your own private Smart Home Gateway. This guide provides an overview of
-what is currently referred to as the “WebThings Gateway” by Mozilla. This guide overs release version 0.8. Hereafter we will
+what is currently referred to as the “WebThings Gateway” by Mozilla. This guide covers release version 0.8. Hereafter we will
 usually just refer to it as the "gateway". 
 
 The gateway lets you directly monitor and control your home over the web. Unlike many smart home hubs and connected 
@@ -59,8 +59,8 @@ temperature sensors, and more: remove tab from battery, or plug in battery, to p
 <img src="./images/image6.jpg" alt="sensor battery tab" width="250">
 
 **TIP**: Some devices come pre-paired with controllers or IoT hubs. First follow the manufacturers instructions to do 
-a **factory reset** on those devices before attempting to pair them with your Mozilla gateway. See the Supported Devices wiki  
-for more tips on pairing new devices.
+a **factory reset** on those devices before attempting to pair them with your Mozilla gateway. Refer to the appendix 
+and to the wiki for more information.
 
 When you are ready to add devices to your Things Gateway, we recommend that you provision devices one at a time. 
 
