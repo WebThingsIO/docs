@@ -12,7 +12,7 @@ It is an open source implementation of emerging [Web of Things](https://www.w3.o
 
 ## WebThings Framework
 
-[WebThings Framework](https://iot.mozilla.org/things/) is a collection of re-usable software components to help developers build their own web things which directly expose the Web Thing API.
+[WebThings Framework](https://iot.mozilla.org/framework/) is a collection of re-usable software components to help developers build their own web things which directly expose the Web Thing API.
 
 ### Libraries
  * 🌐 [Node.js](https://github.com/mozilla-iot/webthing-node)
