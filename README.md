@@ -5,7 +5,7 @@
 It is an open source implementation of emerging [Web of Things](https://www.w3.org/WoT/) standards at the W3C.
 
 ## WebThings Gateway
-[WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directy monitor and control their smart home over the web, without a middleman.
+[WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 * 📝 [Getting Started Guide](./gateway-getting-started-guide.md)
 * 📝 [User Guide](./gateway-user-guide.md)
 * 🌐 [Supported Hardware](https://github.com/mozilla-iot/wiki/wiki/Supported-Hardware)
