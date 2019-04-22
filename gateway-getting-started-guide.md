@@ -66,7 +66,7 @@ You will then be given the option to register a free subdomain to safely access 
 
 ![Choose subdomain](/images/choose_subdomain.png)
 
-Enter your choice of subdomain and an email address in case you need to retrieve it later, the click "Create".
+Enter your choice of subdomain and an email address in case you need to retrieve it later, then click "Create".
 
 
 **Notes:**
