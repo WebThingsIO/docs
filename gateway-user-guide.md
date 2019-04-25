@@ -87,7 +87,7 @@ identify each device.
 First learn how to monitor and control each device by checking out its capabilities. Then in the next section 
 you can learn to create rules to automate interactions between devices.
 
-Devices are displayed on the Things screen and the Floorplan screen. You can toggle light bulb and smart plugs 
+Devices are displayed on the Things screen and the Floorplan screen. You can toggle light bulbs and smart plugs 
 on and off by directly clicking on the device icon. You can also see the current state of devices such as 
 door sensors and motion detectors, from these screens. 
 
