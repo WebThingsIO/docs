@@ -60,7 +60,7 @@ Select your home network from the list and enter your Wi-Fi password to connect.
 
 ### 5. Choose Subdomain
 
-Once you have connected the Pi to your wireless network, you should ensure that you laptop/tablet/smartphone is connected to the same Wi-Fi network and then navigate to **http://gateway.local** in your web browser.
+Once you have connected the Pi to your wireless network, you should ensure that your laptop/tablet/smartphone is connected to the same Wi-Fi network and then navigate to **http://gateway.local** in your web browser.
 
 You will then be given the option to register a free subdomain to safely access your gateway over the Internet using a [secure tunnelling service](https://github.com/mozilla-iot/wiki/wiki/Gateway-Remote-Access) provided by Mozilla.
 
