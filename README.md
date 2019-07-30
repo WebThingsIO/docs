@@ -9,6 +9,8 @@ It is an open source implementation of emerging [Web of Things](https://www.w3.o
 * 📝 [Getting Started Guide - Raspberry Pi](./gateway-getting-started-guide.md)
 * 📝 [Getting Started Guide - Turris Omnia](./gateway-getting-started-guide-turris-omnia.md)
 * 📝 [User Guide](./gateway-user-guide.md)
+* 🌐 [Docker Image](https://hub.docker.com/r/mozillaiot/gateway)
+* 🌐 [Build Instructions](https://github.com/mozilla-iot/gateway#readme)
 * 🌐 [Supported Hardware](https://github.com/mozilla-iot/wiki/wiki/Supported-Hardware)
 
 ## WebThings Framework
