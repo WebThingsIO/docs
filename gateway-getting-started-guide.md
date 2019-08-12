@@ -8,7 +8,7 @@
 
 ![What you need](/images/what_you_need.png)
 
-1. **A [Raspberry Pi®](https://www.raspberrypi.org/products/)** single board computer and power supply (Raspberry Pi 3 recommended, with minimum 2A power supply)
+1. **A [Raspberry Pi®](https://www.raspberrypi.org/products/)** single board computer and power supply (Raspberry Pi 3 and 4 recommended, with minimum 2A power supply)
 2. **A microSD card** (At least 8GB, class 10 recommended)
 3. **USB dongles** (see the list of [compatible adapters](https://github.com/mozilla-iot/wiki/wiki/Supported-Hardware#adapters))
 
