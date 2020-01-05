@@ -353,9 +353,9 @@ or post issues on [github](https://github.com/mozilla-iot/gateway/issues).
 
 ## Appendix: Tips on Pairing and Unpairing Smart Devices
 
-Although you typcially can follow manufacturer instructions to pair and unpair devices, there are additional tricks to 
+Although you typically can follow manufacturer instructions to pair and unpair devices, there are additional tricks to 
 discovering devices. Some devices have a "chain link" or other button that you should click when you are ready to scan 
 for the new device. Other products have reset buttons that you have to hold for some period of time to reset the device. 
 Still others require multiple power cycles, double-button presses and various schemes. Unfortunately there is no common 
 approach across a broad spectrum of device makers! Our supported devices wiki will likely be your best bet to see methods 
-that have work for us.
+that have worked for us.
