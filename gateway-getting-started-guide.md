@@ -2,7 +2,7 @@
 
 ## WebThings Gateway for Raspberry Pi®
 
-[WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directy monitor and control their smart home over the web, without a middleman.
+[WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 
 ### What you will need
 
