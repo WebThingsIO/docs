@@ -7,7 +7,6 @@ It is an open source implementation of emerging [Web of Things](https://www.w3.o
 ## WebThings Gateway
 [WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 * 📝 [Getting Started Guide - Raspberry Pi](./gateway-getting-started-guide.md)
-* 📝 [Getting Started Guide - Turris Omnia](./gateway-getting-started-guide-turris-omnia.md)
 * 📝 [User Guide](./gateway-user-guide.md)
 * 🌐 [Supported Hardware](https://github.com/mozilla-iot/wiki/wiki/Supported-Hardware)
 
