@@ -3,12 +3,12 @@
 ## WebThings Gateway for Raspberry Pi User Guide
 [WebThings Gateway](https://iot.mozilla.org/gateway) by Mozilla is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 
-This guide assumes you have already followed the [Getting Started Guide](https://mozilla-iot.github.io/docs/gateway-getting-started-guide.html) to bring your gateway online.
+This guide assumes you have already followed the [Getting Started Guide](https://iot.mozilla.org/docs/gateway-getting-started-guide.html) to bring your gateway online.
 
 ## I. Introduction
 
 Congratulations on choosing to set up your own private Smart Home Gateway. This guide provides an overview of
-what is currently referred to as the "WebThings Gateway" by Mozilla. This guide covers release version 0.12. Hereafter we will
+the Mozilla WebThings Gateway. This guide covers release version 0.12. Hereafter we will
 usually just refer to it as the "gateway".
 
 The gateway lets you directly monitor and control your home over the web. Unlike many smart home hubs and connected
@@ -252,7 +252,7 @@ by your WebThings Gateway.
 
 New add-ons will continue to be developed to enable control of newly supported devices, so check back periodically
 to scan new add-ons in the list. You can submit requests for additional device support in the issues tab of the
-[gateway software development site](https://github.com/mozilla-iot/addon-list/issues).
+[gateway software development site](https://github.com/WebThingsIO/addon-list/issues).
 
 ## VIII. Additional Settings
 
@@ -324,7 +324,7 @@ development tools.
 
 ## IX. Support
 
-For support, please sign up to our IoT [Discourse forum](https://discourse.mozilla.org/c/iot), email us at iot@mozilla.com, join us on [Matrix](https://chat.mozilla.org) in the #iot channel, or post issues on [GitHub](https://github.com/mozilla-iot/gateway/issues).
+For support, please sign up to our IoT [Discourse forum](https://discourse.mozilla.org/c/iot), join us on [Matrix](https://chat.mozilla.org) in the #iot channel, or post issues on [GitHub](https://github.com/WebThingsIO/gateway/issues).
 
 ## Appendix: Tips on Pairing and Unpairing Smart Devices
 
@@ -332,5 +332,5 @@ Although you typically can follow manufacturer instructions to pair and unpair d
 discovering devices. Some devices have a "chain link" or other button that you should click when you are ready to scan
 for the new device. Other products have reset buttons that you have to hold for some period of time to reset the device.
 Still others require multiple power cycles, double-button presses and various schemes. Unfortunately there is no common
-approach across a broad spectrum of device makers! Our [wiki](https://github.com/mozilla-iot/wiki/wiki) will likely be
+approach across a broad spectrum of device makers! Our [wiki](https://github.com/WebThingsIO/wiki/wiki) will likely be
 your best bet to see methods that have worked for us.

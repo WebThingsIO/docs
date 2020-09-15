@@ -10,7 +10,7 @@
 
 1. **A [Raspberry Pi®](https://www.raspberrypi.org/products/)** single board computer and power supply (Raspberry Pi 3 recommended, with minimum 2A power supply)
 2. **A microSD card** (At least 8GB, class 10 recommended)
-3. **USB dongles** (see the list of [compatible dongles](https://github.com/mozilla-iot/wiki/wiki/Supported-Hardware#usb-dongles))
+3. **USB dongles** (see the list of [compatible dongles](https://github.com/WebThingsIO/wiki/wiki/Supported-Hardware#usb-dongles))
 
 **Note:** The Raspberry Pi 3 comes with Wi-Fi and Bluetooth radios. The USB dongles are needed if you want to support other smart home protocols like Zigbee and Z-Wave.
 
@@ -66,7 +66,7 @@ Select the desired network and enter the password when prompted.  The "Connectin
 
 After you've connected the Raspberry Pi to your wireless network, you should ensure that your laptop/tablet/smartphone is connected to the same Wi-Fi network and then navigate to **http://gateway.local** in your web browser.
 
-You will then be given the option to register a free subdomain to safely access your gateway over the Internet using a [secure tunnelling service](https://github.com/mozilla-iot/registration_server/blob/master/doc/flow.md) provided by Mozilla.
+You will then be given the option to register a free subdomain to safely access your gateway over the Internet using a [secure tunnelling service](https://github.com/WebThingsIO/registration_server/blob/master/doc/flow.md) provided by Mozilla.
 
 <img alt="choose subdomain" src="./images/choose_subdomain.png">
 
