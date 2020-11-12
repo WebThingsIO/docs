@@ -1,6 +1,6 @@
 theme: jekyll-theme-slate
-title: Mozilla WebThings Documentation
-description: A guide to using the WebThings Gateway and WebThings Framework
+title: WebThings Documentation
+description: A guide to using and developing for the WebThings IoT Platform
 baseurl: /docs
 show_downloads: false
 encoding: UTF-8

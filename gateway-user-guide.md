@@ -1,14 +1,14 @@
 # User Guide
 
 ## WebThings Gateway for Raspberry Pi User Guide
-[WebThings Gateway](https://iot.mozilla.org/gateway) by Mozilla is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
+[WebThings Gateway](https://webthings.io/gateway) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 
-This guide assumes you have already followed the [Getting Started Guide](https://iot.mozilla.org/docs/gateway-getting-started-guide.html) to bring your gateway online.
+This guide assumes you have already followed the [Getting Started Guide](https://webthings.io/docs/gateway-getting-started-guide.html) to bring your gateway online.
 
 ## I. Introduction
 
 Congratulations on choosing to set up your own private Smart Home Gateway. This guide provides an overview of
-the Mozilla WebThings Gateway. This guide covers release version 0.12. Hereafter we will
+the WebThings Gateway. This guide covers release version 0.12. Hereafter we will
 usually just refer to it as the "gateway".
 
 The gateway lets you directly monitor and control your home over the web. Unlike many smart home hubs and connected
@@ -28,7 +28,7 @@ and a Zigbee USB dongle. The bottom row shows a door sensor, smart plugs, smart 
 
 Currently there is no specific smartphone application for the gateway, but you can load your unique gateway url into a smartphone browser application and save it to your home screen, which makes it work just like any other application.
 
-If you use Mozilla's tunneling service, your gateway url will be of the form `[your_subdomain].mozilla-iot.org`.
+If you use the WebThings Cloud tunneling service, your gateway url will be of the form `[your_subdomain].webthings.io`.
 
 We recommend that you **bookmark** the web address on all devices that you have access to from home.
 It is also handy to save your WebThings Gateway as a **web application on the home screen** of your phones and tablets.
@@ -70,7 +70,7 @@ Configure the weather add-on:
 
 <img src="./images/weather_addon_configuration.png" alt="weather addon settings" width="800">
 
-Return to the main Things page (https://SUBDOMAIN.mozilla-iot.org/things) and click the "+" icon to add a new thing.  Scanning for new devices should discover the Weather thing with the location name you specified.  Click "Save".
+Return to the main Things page (https://SUBDOMAIN.webthings.io/things) and click the "+" icon to add a new thing.  Scanning for new devices should discover the Weather thing with the location name you specified.  Click "Save".
 
 <img src="./images/weather_thing_add.png" alt="add weather thing" width="800">
 
@@ -137,7 +137,7 @@ the <img src="./images/image34.png" alt="edit" width="20"> icon in the bottom ri
 
 ## IV. Rules: Automate Your Home
 
-Now that your Mozilla WebThings Gateway is set up and your smart things are connected, you can start automating
+Now that your WebThings Gateway is set up and your smart things are connected, you can start automating
 your home for your convenience by creating 'Rules'. Practice creating a rule by following the next few steps.
 
 ### Create a Rule
@@ -324,7 +324,7 @@ development tools.
 
 ## IX. Support
 
-For support, please sign up to our IoT [Discourse forum](https://discourse.mozilla.org/c/iot), join us on [Matrix](https://chat.mozilla.org) in the #iot channel, or post issues on [GitHub](https://github.com/WebThingsIO/gateway/issues).
+For support, please sign up to our [forum](https://discourse.mozilla.org/c/iot), join us on [Matrix](https://chat.mozilla.org) in the #iot channel, or post issues on [GitHub](https://github.com/WebThingsIO/gateway/issues).
 
 ## Appendix: Tips on Pairing and Unpairing Smart Devices
 

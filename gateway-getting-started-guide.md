@@ -2,7 +2,7 @@
 
 ## WebThings Gateway for Raspberry Pi®
 
-[WebThings Gateway](https://iot.mozilla.org/gateway/) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
+[WebThings Gateway](https://webthings.io/gateway/) is a software distribution for smart home gateways which allows users to directly monitor and control their smart home over the web, without a middleman.
 
 ### What you will need
 
@@ -16,7 +16,7 @@
 
 ### 1. Download Image
 
-First download the latest gateway image from the [Mozilla IoT website](https://iot.mozilla.org/gateway/).
+First download the latest gateway image from the [WebThings website](https://webthings.io/gateway/).
 
 ### 2. Flash Image
 
@@ -66,11 +66,11 @@ Select the desired network and enter the password when prompted.  The "Connectin
 
 After you've connected the Raspberry Pi to your wireless network, you should ensure that your laptop/tablet/smartphone is connected to the same Wi-Fi network and then navigate to **http://gateway.local** in your web browser.
 
-You will then be given the option to register a free subdomain to safely access your gateway over the Internet using a [secure tunnelling service](https://github.com/WebThingsIO/registration_server/blob/master/doc/flow.md) provided by Mozilla.
+You will then be given the option to register a free subdomain to safely access your gateway over the Internet using a [secure tunnelling service](https://github.com/WebThingsIO/registration_server/blob/master/doc/flow.md).
 
 <img alt="choose subdomain" src="./images/choose_subdomain.png">
 
-Enter your choice of subdomain and an email address in case you need to retrieve your subdomain later to re-install on a new gateway. Click "Create" and wait a few moments for the subdomain registration to complete.  Try loading your subdomain on your smartphone or computer by loading https://SUBDOMAIN.mozilla-iot.org (where 'SUBDOMAIN' is the subdomain name you've chosen).
+Enter your choice of subdomain and an email address in case you need to retrieve your subdomain later to re-install on a new gateway. Click "Create" and wait a few moments for the subdomain registration to complete.  Try loading your subdomain on your smartphone or computer by loading https://SUBDOMAIN.webthings.io (where 'SUBDOMAIN' is the subdomain name you've chosen).
 
 
 **Notes:**
