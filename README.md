@@ -37,7 +37,6 @@ The Web Thing API is the REST & WebSockets API used by the WebThings IoT platfor
 * [Creating a new translation](https://github.com/WebThingsIO/wiki/wiki/Fluent%3A-Making-a-new-translation)
 * [Testing pre-release OTA updates](https://github.com/WebThingsIO/wiki/wiki/Testing-prerelease-OTA-updates)
 * [Releasing a Gateway OTA Update](https://github.com/WebThingsIO/wiki/wiki/How-To-Release-a-Gateway-OTA-Update)
-* [Using the staging server](https://github.com/WebThingsIO/wiki/wiki/HOWTO%3A-Use-the-staging-server-for-testing)
 #### Add-Ons
 * [Introduction to Add-ons](https://github.com/WebThingsIO/addon-list/blob/master/guidelines.md)
 * [Creating an Add-on](https://github.com/WebThingsIO/wiki/wiki/HOWTO%3A-Create-an-add-on)
