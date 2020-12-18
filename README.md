@@ -1,3 +1,5 @@
+**Note:** This documentation is no longer maintained and has been replaced by new documentation at [webthings.io/docs](https://webthings.io/docs)
+
 # Mozilla WebThings
 
 [Mozilla WebThings](https://iot.mozilla.org/) is an open platform for monitoring and controlling devices over the web.
