@@ -1,0 +1,16 @@
+.wy-side-nav-search, .wy-nav-top {
+  background-color: #5d9bc7;
+}
+
+code {
+  background-color: #282c34 !important;
+  font-size: 13px !important;
+}
+
+pre code {
+  padding: 1.5em !important;
+}
+
+.rst-content code, .rst-content pre code {
+  color: #fff;
+}

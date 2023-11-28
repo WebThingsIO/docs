@@ -1,0 +1,34 @@
+site_name: WebThings Documentation
+site_url: https://webthings.io/docs
+site_description: 'Documentation for the WebThings platform'
+nav:
+  - 'WebThings Gateway':
+      - 'Introduction': 'gateway/introduction.md'
+      - 'Installation': 'gateway/installation.md'
+      - 'First Time Setup': 'gateway/setup.md'
+      - 'Log In': 'gateway/log-in.md'
+      - 'Things': 'gateway/things.md'
+      - 'Rules': 'gateway/rules.md'
+      - 'Logs': 'gateway/logs.md'
+      - 'Floorplan': 'gateway/floorplan.md'
+      - 'Settings': 'gateway/settings.md'
+      - 'Log Out': 'gateway/log-out.md'
+      - 'Supported Hardware': 'gateway/supported-hardware.md'
+      - 'Development': 'gateway/hacking.md'
+  - 'WebThings Framework':
+    - 'Introduction': 'framework/introduction.md'
+    - 'Node.js': 'framework/node-js.md'
+    - 'Python': 'framework/python.md'
+    - 'Java': 'framework/java.md'
+    - 'Rust': 'framework/rust.md'
+    - 'Arduino': 'framework/arduino.md'
+    - 'MicroPython': 'framework/micropython.md'
+  - 'W3C Web of Things':
+    - 'Introduction': 'wot/introduction.md'
+theme: 
+    name: readthedocs
+    logo: 'images/logo.svg'
+    hightlightjs: true
+    hljs_style: atom-one-dark
+extra_css:
+  - css/style.css
