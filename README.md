@@ -14,4 +14,8 @@ To generate a local copy:
 
 You should then be able to access the docs at http://127.0.0.1:8000/ and they will live reload as you edit the markdown files.
 
+To deploy the documentation to GitHub Pages:
+
+`$ mkdocs gh-deploy`
+
 See the [MkDocs user guide](https://www.mkdocs.org/user-guide/) for more.
