@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/gateway/logs/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Logs - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Logs";
+        var mkdocs_page_input_path = "gateway/logs.md";
+        var mkdocs_page_url = "/docs/gateway/logs/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Logs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#add-log">Add Log</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#view-logs">View Logs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remove-log">Remove Log</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Gateway</li>
+      <li class="breadcrumb-item active">Logs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="logs">Logs</h1>
+<p>The logging screen can be used to log values of properties over time and visualise that information on a graph.</p>
+<p>To navigate to the logs screen, choose the "Logs" option from the main menu.</p>
+<p><img alt="Screenshot of the main menu with the &quot;Logs&quot; option selected" src="../images/main_menu-logs.png" /></p>
+<h2 id="add-log">Add Log</h2>
+<p>To add a log, click the "+" button at the bottom right of the screen.</p>
+<p><img alt="Screenshot of the empty logs screen" src="../images/logs_screen-empty.png" /></p>
+<p>You will then see the new log screen.</p>
+<ol>
+<li>Choose a device whose property you would like to log</li>
+<li>Choose a numerical or boolean property you would like to log</li>
+<li>Choose how long you would like to retain logged data for before it is automatically deleted</li>
+<li>Click the "Save" button</li>
+</ol>
+<p><img alt="Screenshot of the new log screen with dropdowns for device and property name, and a number field and unit dropdown for the retention period" src="../images/new_log.png" /></p>
+<p>You will then be navigated to the view logs screen, with an empty graph representing the log you just created.</p>
+<p><img alt="Screenshot of the logs screen with one graph representing the log that was created" src="../images/view_logs.png" /></p>
+<p><strong>⚠️ Warning:</strong> If saving logs to an SD card (e.g. on a Raspberry Pi), writing large quantities of data can shorten the life of your memory card.</p>
+<h2 id="view-logs">View Logs</h2>
+<p>To view an individual log full screen, click its title from the view logs screen.</p>
+<p><img alt="Screenshot of a collection of graphs representing logs" src="../images/view_logs-multiple_logs.png" /></p>
+<p>The data in the log is represented as a line graph. You can set the timescale of the graph to "minute", "hour", "day" or "week" depending on the duration you'd like to view at any one time. You can then scroll through the logged data using the scrollbar at the bottom.</p>
+<p><img alt="Screenshot of a line graph of a numerical property over time" src="../images/view_log-populated.png" /></p>
+<p>Both numerical and boolean (true/false) types of property can be logged.</p>
+<p>The x axis will show the timescale, and the y axis will show the range and unit of the values.</p>
+<p>Logs are updated in real time, which you will notice when viewing the "Minute" time resolution because the graph will animate across the screen.</p>
+<p><img alt="Screenshot of a line graph of a boolean property over time" src="../images/view_log-boolean.png" /></p>
+<p><strong>💡 Tip:</strong> You can hover over a data point to view its exact timestamp and value.</p>
+<h2 id="remove-log">Remove Log</h2>
+<p>To remove a log, from the view log screen click the overflow menu at the bottom right of the screen and click the "Remove" option.</p>
+<p><img alt="Screenshot of the log overflow menu with the &quot;Remove&quot; option selected" src="../images/remove_log_option.png" /></p>
+<p>You will then be shown a confirmation dialog which will confirm that you want to permanently delete the log.</p>
+<p><strong>⚠️ Warning:</strong> Removing a log will also permanently delete all of its data.</p>
+<p><img alt="Screenshot of the remove log confirmation dialog" src="../images/remove_log-confirm.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../rules/" class="btn btn-neutral float-left" title="Rules"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../floorplan/" class="btn btn-neutral float-right" title="Floorplan">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../rules/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../floorplan/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

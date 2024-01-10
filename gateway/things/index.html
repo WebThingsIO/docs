@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/gateway/things/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Things - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Things";
+        var mkdocs_page_input_path = "gateway/things.md";
+        var mkdocs_page_url = "/docs/gateway/things/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Things</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#add-thing">Add Thing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#add-thing-by-url">Add Thing by URL</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#view-things">View Things</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#thing-detail">Thing Detail</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#actions">Actions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#events">Events</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edit-thing">Edit Thing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remove-thing">Remove Thing</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Gateway</li>
+      <li class="breadcrumb-item active">Things</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="things">Things</h1>
+<p>On the WebThings platform, connected devices are referred to as "things".</p>
+<h2 id="add-thing">Add Thing</h2>
+<p>To add a thing to your gateway, click the "+" button on the Things screen. This will tell the gateway to start scanning for new devices.</p>
+<p><strong>🗒️ Note:</strong> Many smart home devices will require the user to press a pairing button of some kind in order to initiate a pairing mode. You should follow any instructions that came with your device to enable pairing mode before clicking the "+" button.</p>
+<p><img alt="A screenshot showing an empty screen with a main menu and an add button" src="../images/empty_things_screen.png" /></p>
+<p>A preview of any discovered devices will appear on the screen.</p>
+<p><img alt="A screenshot showing the add thing screen with some thing previews of devices that have been found" src="../images/add_thing_screen-new_things.png" /></p>
+<p>When a device has multiple capabilities (e.g. it acts as both an on/off switch and an energy monitor) you can choose the primary function to display in the user interface from a drop-down menu.</p>
+<p>You can also change the name of the device to something meaningful to you (e.g. "Kitchen Light") before clicking "Save" to add it to the gateway.</p>
+<p>If you click the back button at the top left of the screen to go back to the Things screen, you should now see an icon representing the device you added.</p>
+<p><img alt="A screenshot showing an icon for a Living Room Light" src="../images/things_screen-single_thing.png" /></p>
+<p><strong>🗒️ Note:</strong> Only the Zigbee, Z-Wave and Web Thing add-on adapters are installed by default. To support other types of devices, you will need to install additional <a href="../settings#add-ons">add-ons</a>.</p>
+<h3 id="add-thing-by-url">Add Thing by URL</h3>
+<p>In addition to scanning for new devices, you can manually add a new thing by its "web thing URL". That is the URL of a <a href="https://webthings.io/api/#web-thing-description">Web Thing Description</a>.</p>
+<p><strong>🔧 Technical Note:</strong> Currently the gateway only supports <a href="https://webthings.io/api/#web-thing-description">Web Thing Description</a>s following the legacy Mozilla format. There is a <a href="https://github.com/WebThingsIO/wot-adapter">work-in-progress add-on adapter</a> for supporting W3C WoT compliant Thing Descriptions.</p>
+<p>To add a thing by a web thing URL, click the "Add by URL" link on the Add Thing screen.</p>
+<p><img alt="A screenshot showing the Add Thing screen with the Add by URL link" src="../images/add_thing_screen-scanning.png" /></p>
+<p>A form will then appear with a text box into which you can paste a web thing URL. Click "Submit" to retrieve details about the Thing, then click "Save" to add it to the gateway.</p>
+<p><img alt="A screenshot showing the Add Thing screen with the Add by URL link" src="../images/add_thing_by_url.png" /></p>
+<h2 id="view-things">View Things</h2>
+<p>To view all of your things, select the "Things" option from the main menu.</p>
+<p>Each thing is represented by an icon. The icon shows a live overview of the current state of the thing (e.g. its on/off state or the current value of a key property). Different styles of icon are used for different types of devices.</p>
+<p><img alt="A screenshot showing a collection of icons representing things" src="../images/things_screen.png" /></p>
+<h3 id="thing-detail">Thing Detail</h3>
+<p>To view the properties and actions of a thing, click on the small round detail button at the top right of a thing icon. This will navigate to its detail view.</p>
+<p><img alt="A screenshot showing the detail view of a thing, including an on/off property and a brightness property" src="../images/thing_detail.png" /></p>
+<p>The detail view will show you all of the properties and actions associated with a device.</p>
+<h4 id="properties">Properties</h4>
+<p>Properties may be read-only (e.g. a temperature reading) or writable (e.g. an on/off state which can be toggled with a switch, or a level which can be set with a slider).</p>
+<p>There are many different types of properties for different types of devices, which each have a specialised user interface.</p>
+<p><img alt="A screenshot showing the detail view of a thing, including an on/off property, brightness, color, color temperature and color mode" src="../images/thing_detail-dimmable_color_light.png" /></p>
+<h4 id="actions">Actions</h4>
+<p>Actions are represented by a button and may accept one or more input values (e.g. a percentage to fade a light to over a specified number of seconds).</p>
+<p><img alt="Screenshot of showing the detail of a thing with buttons to invoke actions" src="../images/action_and_events_things.png" /></p>
+<p>To provide inputs to an action, click the action's button on the thing detail view and complete the fields in the form which appears before pressing the submit button.</p>
+<p><img alt="A screenshot showing a form to provide inputs for an action" src="../images/action_input.png" /></p>
+<p>If an action doesn't require any inputs then pressing its button will immediately invoke the action.</p>
+<h4 id="events">Events</h4>
+<p>To view a log of events emitted by a thing, click the overflow menu button at the bottom right of the screen and select the "Event log" option.</p>
+<p><img alt="A screenshot showing the overflow menu on the thing detail view with the &quot;Event log&quot; option selected" src="../images/event_log_option.png" /></p>
+<p>You will then be shown a live log of events being emitted by the device, including event data and timestamps.</p>
+<p><img alt="A screenshot showing a collection of events represented by boxes showing an event name, data and relative timestamp" src="../images/event_log.png" /></p>
+<p><strong>🔧 Technical note</strong>: The gateway's adapter <a href="../settings#add-ons">add-ons</a> are responsible for mapping various devices and protocols to an extensible set of "<a href="https://webthings.io/schemas/">WoT capability schemas</a>". These schemas are represented in a machine-readable format via semantic annotations on a Thing Description. Thing Descriptions are then used by the gateway to generate a rich user interface for each type of device capability, property, action and event.</p>
+<h2 id="edit-thing">Edit Thing</h2>
+<p>To edit a thing, select the "Edit" option from the thing detail overflow menu at the bottom right of the screen.</p>
+<p><img alt="Screenshot of the thing detail overflow menu with the &quot;Edit&quot; option selected" src="../images/edit_thing_option.png" /></p>
+<p>You can then edit the name of the thing and/or its primary device type before clicking "Save" to save your changes.</p>
+<p><img alt="Screenshot of the edit thing dialog with a text input to edit its name and a dropdown menu to choose the primary device type" src="../images/edit_thing.png" /></p>
+<h2 id="remove-thing">Remove Thing</h2>
+<p>To remove a thing, select the "Remove" option from the thing detail overflow menu at the bottom right of the screen.</p>
+<p><img alt="Screenshot of the thing detail overflow menu with the &quot;Remove&quot; option selected" src="../images/remove_thing_option.png" /></p>
+<p>You will then be asked to confirm the removal of the device from the gateway.</p>
+<p><img alt="Screenshot of the confirm remove thing dialog with a remove button" src="../images/confirm_remove_thing.png" /></p>
+<p><strong>🗒️ Note:</strong> Whilst removing a device from the gateway using the remove thing feature will remove it from the gateway user interface, it might not always fully un-pair it from the gateway at the hardware level (e.g. if using a USB dongle). Sometimes a device will have an un-pairing procedure which needs to be followed in order to full disassociate it from the gateway (e.g. involving pressing a button on the device).</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../log-in/" class="btn btn-neutral float-left" title="Log In"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rules/" class="btn btn-neutral float-right" title="Rules">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../log-in/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../rules/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

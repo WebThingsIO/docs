@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/gateway/rules/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Rules - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rules";
+        var mkdocs_page_input_path = "gateway/rules.md";
+        var mkdocs_page_url = "/docs/gateway/rules/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../things/">Things</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Rules</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#add-rule">Add Rule</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#input-and-output">Input and Output</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ifwhile">If/While</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#andor">And/Or</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#view-rules">View Rules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edit-rule">Edit Rule</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remove-rule">Remove Rule</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Gateway</li>
+      <li class="breadcrumb-item active">Rules</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="rules">Rules</h1>
+<p>The rules screen provides a drag and drop graphical user interface to create "if this then that" style rules to automate your home.</p>
+<p>For example, if you want a light to turn on when motion is detected in a room, or sound an alarm when a door is opened.</p>
+<p>To navigate to the rules screen, select the Rules option from the main menu.</p>
+<p><img alt="Screenshot of the main menu with the Rules option selected" src="../images/main_menu-rules-selected.png" /></p>
+<h2 id="add-rule">Add Rule</h2>
+<p>To create a rule, click the "+" button at the bottom right hand corner of the screen.</p>
+<p><img alt="Screenshot of the empty rules screen" src="../images/rules_screen-empty.png" /></p>
+<p>You will then see the new rule screen where you can choose one or more inputs, one or more outputs and give the rule a name.</p>
+<p>Properties and events of devices can be used as inputs, and properties and actions can be used as outputs.</p>
+<p><img alt="Screenshot of unpopulated new rule screen" src="../images/new_rule.png" /></p>
+<h3 id="input-and-output">Input and Output</h3>
+<p>First, drag and drop a device from the collection of devices at the bottom to the left hand side of the rule area to choose the input device for the rule.</p>
+<p><img alt="Screenshot showing the input device being dragged into place" src="../images/new_rule-dragging-input.png" /></p>
+<p>Next, drag and drop a device from the collection of devices at the bottom to the right hand side of the rule area to choose the output device for the rule.</p>
+<p><img alt="Screenshot showing the output device being dragged into place" src="../images/new_rule-dragging_output.png" /></p>
+<p>Next, choose the input property or event which will trigger the rule. </p>
+<p><strong>💡 Tip:</strong> As well as device properties and events, you can also use time as an input to trigger a rule at a particular time of day. To do this, drag and drop the the built-in "Clock" device as an input.</p>
+<p><strong>🗒️ Note:</strong> For numerical properties you can choose a threshold above or below which the rule is triggered.</p>
+<p><img alt="Screenshot showing the a dropdown menu to choose a property value or event to use as a trigger" src="../images/new_rule-choose-input.png" /></p>
+<p>Next, choose the output property value or action to use as an output. </p>
+<p><strong>🗒️ Note:</strong> For numerical properties you can specify the precise value to set the property to when the rule is triggered.</p>
+<p><img alt="Screenshot showing the a dropdown menu to choose a property or action to use as the output" src="../images/new_rule-choose_output.png" /></p>
+<p>Finally, provide a name for the rule by clicking on "Rule Name" at the top of the screen and editing the name.</p>
+<p><img alt="Screenshot showing the a dropdown menu to choose a property or action to use as the output" src="../images/new_rule-complete.png" /></p>
+<p>You will now see the completed rule, with a line linking the input and output as well as a textual description of the rule.</p>
+<p>Click the back button at the top right of the screen to go back to the rules screen and you'll see your new rule has been created.</p>
+<p><img alt="Screenshot showing one rule added to the rules screen" src="../images/rules_screen-single_rule.png" /></p>
+<h3 id="ifwhile">If/While</h3>
+<p>By default, rules use an "if" conditional which is triggered when a property transitions to a given value or an event is emitted. There is also a subtly different "while" conditional.</p>
+<p>If you want an output condition to continue until an input condition stops being true, but then revert back to its previous state (e.g. for a light to remain illuminated whilst a button is pressed), then you can instead choose the "while" option in the textual description of the rule.</p>
+<p><img alt="Screenshot of a while conditional in use" src="../images/new_rule-while.png" /></p>
+<h3 id="andor">And/Or</h3>
+<p>When selecting multiple inputs for a rule, you can choose whether all conditions need to be true for the rule to be triggered, or just one of them.</p>
+<p>To only trigger the rule if all of the input conditions are true, select the "and" option in the textual description of the rule.</p>
+<p><img alt="Screenshot showing the an and conditional in use" src="../images/new_rule-and.png" /></p>
+<p>To trigger the rule if any of the input conditions are true, select the "or" option in the textual description of the rule.</p>
+<p><img alt="Screenshot showing an or conditional in use" src="../images/new_rule-or.png" /></p>
+<h2 id="view-rules">View Rules</h2>
+<p>To view all of your rules, select the "Rules" option from the main menu.</p>
+<p><img alt="Screenshot showing an or conditional in use" src="../images/rules_screen-multiple_rules.png" /></p>
+<p>Each rule is represented by a card which shows the name and description of the rule and icons illustrating the inputs and outputs it uses.</p>
+<p>A rule can be toggled on and off using the on/off button. This can be useful for temporarily enabling or disabling a rule (e.g. to arm or disarm an alarm system).</p>
+<p><strong>🗒️ Note:</strong> If a rule is missing a valid input or output, or one of the devices used as an input or output has been removed from the gateway, the rule may show as "invalid".</p>
+<p><img alt="Screenshot showing invalid rule" src="../images/rules_screen-invalid_rule.png" /></p>
+<h2 id="edit-rule">Edit Rule</h2>
+<p>To edit a rule, hover over its card in the rules view and click the "Edit Rule" button.</p>
+<p><img alt="Screenshot showing an or conditional in use" src="../images/edit_rule_button.png" /></p>
+<p>This will take you to the edit rule screen, which is the same as the new rule screen.</p>
+<p><img alt="Screenshot showing an or conditional in use" src="../images/new_rule-complete.png" /></p>
+<p>Once you have finished editing ther rule, click the back button to go back to the rules screen. Your changes will be saved automatically.</p>
+<h2 id="remove-rule">Remove Rule</h2>
+<p>To remove a rule you can either hover over its card in the rule screen and press the "x" button, or press the trash can icon in the edit rule screen.</p>
+<p>Either way you will be shown a remove rule confirmation dialog. Click "Remove Rule" to delete it.</p>
+<p><img alt="Screenshot showing an or conditional in use" src="../images/remove_rule-confirm.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../things/" class="btn btn-neutral float-left" title="Things"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../logs/" class="btn btn-neutral float-right" title="Logs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../things/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../logs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

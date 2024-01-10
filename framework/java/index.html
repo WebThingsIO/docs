@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/framework/java/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Java - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Java";
+        var mkdocs_page_input_path = "framework/java.md";
+        var mkdocs_page_url = "/docs/framework/java/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Java</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#maven">Maven</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gradle">Gradle</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Framework</li>
+      <li class="breadcrumb-item active">Java</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="webthing-java">webthing-java</h1>
+<h2 id="installation">Installation</h2>
+<h3 id="maven">Maven</h3>
+<pre><code>&lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;io.webthings&lt;/groupId&gt;
+          &lt;artifactId&gt;webthing&lt;/artifactId&gt;
+          &lt;version&gt;0.13.0&lt;/version&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+</code></pre>
+<h3 id="gradle">Gradle</h3>
+<pre><code>dependencies {
+      runtime(
+          [group: 'io.webthings', name: 'webthing', version: '0.13.0'],
+      )
+    }
+</code></pre>
+<h2 id="example">Example</h2>
+<pre><code>
+
+package io.webthings.webthing.example;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import io.webthings.webthing.Action;
+import io.webthings.webthing.Event;
+import io.webthings.webthing.Property;
+import io.webthings.webthing.Thing;
+import io.webthings.webthing.Value;
+import io.webthings.webthing.WebThingServer;
+import io.webthings.webthing.errors.PropertyError;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.UUID;
+
+public class SingleThing {
+    public static Thing makeThing() {
+        Thing thing = new Thing(&quot;urn:dev:ops:my-lamp-1234&quot;,
+                                &quot;My Lamp&quot;,
+                                new JSONArray(Arrays.asList(&quot;OnOffSwitch&quot;,
+                                                            &quot;Light&quot;)),
+                                &quot;A web connected lamp&quot;);
+
+        JSONObject onDescription = new JSONObject();
+        onDescription.put(&quot;@type&quot;, &quot;OnOffProperty&quot;);
+        onDescription.put(&quot;title&quot;, &quot;On/Off&quot;);
+        onDescription.put(&quot;type&quot;, &quot;boolean&quot;);
+        onDescription.put(&quot;description&quot;, &quot;Whether the lamp is turned on&quot;);
+        thing.addProperty(new Property(thing,
+                                       &quot;on&quot;,
+                                       new Value(true),
+                                       onDescription));
+
+        JSONObject brightnessDescription = new JSONObject();
+        brightnessDescription.put(&quot;@type&quot;, &quot;BrightnessProperty&quot;);
+        brightnessDescription.put(&quot;title&quot;, &quot;Brightness&quot;);
+        brightnessDescription.put(&quot;type&quot;, &quot;integer&quot;);
+        brightnessDescription.put(&quot;description&quot;,
+                                  &quot;The level of light from 0-100&quot;);
+        brightnessDescription.put(&quot;minimum&quot;, 0);
+        brightnessDescription.put(&quot;maximum&quot;, 100);
+        brightnessDescription.put(&quot;unit&quot;, &quot;percent&quot;);
+        thing.addProperty(new Property(thing,
+                                       &quot;brightness&quot;,
+                                       new Value(50),
+                                       brightnessDescription));
+
+        JSONObject fadeMetadata = new JSONObject();
+        JSONObject fadeInput = new JSONObject();
+        JSONObject fadeProperties = new JSONObject();
+        JSONObject fadeBrightness = new JSONObject();
+        JSONObject fadeDuration = new JSONObject();
+        fadeMetadata.put(&quot;title&quot;, &quot;Fade&quot;);
+        fadeMetadata.put(&quot;description&quot;, &quot;Fade the lamp to a given level&quot;);
+        fadeInput.put(&quot;type&quot;, &quot;object&quot;);
+        fadeInput.put(&quot;required&quot;,
+                      new JSONArray(Arrays.asList(&quot;brightness&quot;, &quot;duration&quot;)));
+        fadeBrightness.put(&quot;type&quot;, &quot;integer&quot;);
+        fadeBrightness.put(&quot;minimum&quot;, 0);
+        fadeBrightness.put(&quot;maximum&quot;, 100);
+        fadeBrightness.put(&quot;unit&quot;, &quot;percent&quot;);
+        fadeDuration.put(&quot;type&quot;, &quot;integer&quot;);
+        fadeDuration.put(&quot;minimum&quot;, 1);
+        fadeDuration.put(&quot;unit&quot;, &quot;milliseconds&quot;);
+        fadeProperties.put(&quot;brightness&quot;, fadeBrightness);
+        fadeProperties.put(&quot;duration&quot;, fadeDuration);
+        fadeInput.put(&quot;properties&quot;, fadeProperties);
+        fadeMetadata.put(&quot;input&quot;, fadeInput);
+        thing.addAvailableAction(&quot;fade&quot;, fadeMetadata, FadeAction.class);
+
+        JSONObject overheatedMetadata = new JSONObject();
+        overheatedMetadata.put(&quot;description&quot;,
+                               &quot;The lamp has exceeded its safe operating temperature&quot;);
+        overheatedMetadata.put(&quot;type&quot;, &quot;number&quot;);
+        overheatedMetadata.put(&quot;unit&quot;, &quot;degree celsius&quot;);
+        thing.addAvailableEvent(&quot;overheated&quot;, overheatedMetadata);
+
+        return thing;
+    }
+
+    public static void main(String[] args) {
+        Thing thing = makeThing();
+        WebThingServer server;
+
+        try {
+            // If adding more than one thing, use MultipleThings() with a name.
+            // In the single thing case, the thing's name will be broadcast.
+            server = new WebThingServer(new WebThingServer.SingleThing(thing),
+                                        8888);
+
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    server.stop();
+                }
+            });
+
+            server.start(false);
+        } catch (IOException e) {
+            System.out.println(e);
+            System.exit(1);
+        }
+    }
+
+    public static class OverheatedEvent extends Event {
+        public OverheatedEvent(Thing thing, int data) {
+            super(thing, &quot;overheated&quot;, data);
+        }
+    }
+
+    public static class FadeAction extends Action {
+        public FadeAction(Thing thing, JSONObject input) {
+            super(UUID.randomUUID().toString(), thing, &quot;fade&quot;, input);
+        }
+
+        @Override
+        public void performAction() {
+            Thing thing = this.getThing();
+            JSONObject input = this.getInput();
+            try {
+                Thread.sleep(input.getInt(&quot;duration&quot;));
+            } catch (InterruptedException e) {
+            }
+
+            try {
+                thing.setProperty(&quot;brightness&quot;, input.getInt(&quot;brightness&quot;));
+                thing.addEvent(new OverheatedEvent(thing, 102));
+            } catch (PropertyError e) {
+            }
+        }
+    }
+}
+
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../python/" class="btn btn-neutral float-left" title="Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rust/" class="btn btn-neutral float-right" title="Rust">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../rust/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

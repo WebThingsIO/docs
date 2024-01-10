@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/framework/rust/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Rust - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rust";
+        var mkdocs_page_input_path = "framework/rust.md";
+        var mkdocs_page_url = "/docs/framework/rust/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../java/">Java</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Rust</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cargo">Cargo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Framework</li>
+      <li class="breadcrumb-item active">Rust</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="webthing-rust">webthing-rust</h1>
+<h2 id="installation">Installation</h2>
+<h3 id="cargo">Cargo</h3>
+<pre><code>[dependencies]
+    webthing = &quot;0.13&quot;
+</code></pre>
+<h2 id="example">Example</h2>
+<pre><code>use actix_rt;
+    use serde_json::json;
+    use std::sync::{Arc, RwLock, Weak};
+    use std::{thread, time};
+    use uuid::Uuid;
+    use webthing::{
+    Action, BaseAction, BaseEvent, BaseProperty, BaseThing, Thing, ThingsType, WebThingServer,
+    };
+
+    use webthing::server::ActionGenerator;
+
+    pub struct FadeAction(BaseAction);
+
+    impl FadeAction {
+    fn new(
+        input: Option&lt;serde_json::Map&lt;String, serde_json::Value&gt;&gt;,
+        thing: Weak&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;,
+    ) -&gt; FadeAction {
+        FadeAction(BaseAction::new(
+            Uuid::new_v4().to_string(),
+            &quot;fade&quot;.to_owned(),
+            input,
+            thing,
+        ))
+    }
+    }
+
+    impl Action for FadeAction {
+    fn set_href_prefix(&amp;mut self, prefix: String) {
+        self.0.set_href_prefix(prefix)
+    }
+
+    fn get_id(&amp;self) -&gt; String {
+        self.0.get_id()
+    }
+
+    fn get_name(&amp;self) -&gt; String {
+        self.0.get_name()
+    }
+
+    fn get_href(&amp;self) -&gt; String {
+        self.0.get_href()
+    }
+
+    fn get_status(&amp;self) -&gt; String {
+        self.0.get_status()
+    }
+
+    fn get_time_requested(&amp;self) -&gt; String {
+        self.0.get_time_requested()
+    }
+
+    fn get_time_completed(&amp;self) -&gt; Option&lt;String&gt; {
+        self.0.get_time_completed()
+    }
+
+    fn get_input(&amp;self) -&gt; Option&lt;serde_json::Map&lt;String, serde_json::Value&gt;&gt; {
+        self.0.get_input()
+    }
+
+    fn get_thing(&amp;self) -&gt; Option&lt;Arc&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;&gt; {
+        self.0.get_thing()
+    }
+
+    fn set_status(&amp;mut self, status: String) {
+        self.0.set_status(status)
+    }
+
+    fn start(&amp;mut self) {
+        self.0.start()
+    }
+
+    fn perform_action(&amp;mut self) {
+        let thing = self.get_thing();
+        if thing.is_none() {
+            return;
+        }
+
+        let thing = thing.unwrap();
+        let input = self.get_input().unwrap().clone();
+        let name = self.get_name();
+        let id = self.get_id();
+
+        thread::spawn(move || {
+            thread::sleep(time::Duration::from_millis(
+                input.get(&quot;duration&quot;).unwrap().as_u64().unwrap(),
+            ));
+
+            let thing = thing.clone();
+            let mut thing = thing.write().unwrap();
+            let _ = thing.set_property(
+                &quot;brightness&quot;.to_owned(),
+                input.get(&quot;brightness&quot;).unwrap().clone(),
+            );
+            thing.add_event(Box::new(BaseEvent::new(
+                &quot;overheated&quot;.to_owned(),
+                Some(json!(102)),
+            )));
+
+            thing.finish_action(name, id);
+        });
+    }
+
+    fn cancel(&amp;mut self) {
+        self.0.cancel()
+    }
+
+    fn finish(&amp;mut self) {
+        self.0.finish()
+    }
+    }
+
+    struct Generator;
+
+    impl ActionGenerator for Generator {
+    fn generate(
+        &amp;self,
+        thing: Weak&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;,
+        name: String,
+        input: Option&lt;&amp;serde_json::Value&gt;,
+    ) -&gt; Option&lt;Box&lt;dyn Action&gt;&gt; {
+        let input = match input {
+            Some(v) =&gt; match v.as_object() {
+                Some(o) =&gt; Some(o.clone()),
+                None =&gt; None,
+            },
+            None =&gt; None,
+        };
+
+        let name: &amp;str = &amp;name;
+        match name {
+            &quot;fade&quot; =&gt; Some(Box::new(FadeAction::new(input, thing))),
+            _ =&gt; None,
+        }
+    }
+    }
+
+    fn make_thing() -&gt; Arc&lt;RwLock&lt;Box&lt;dyn Thing + 'static&gt;&gt;&gt; {
+    let mut thing = BaseThing::new(
+        &quot;urn:dev:ops:my-lamp-1234&quot;.to_owned(),
+        &quot;My Lamp&quot;.to_owned(),
+        Some(vec![&quot;OnOffSwitch&quot;.to_owned(), &quot;Light&quot;.to_owned()]),
+        Some(&quot;A web connected lamp&quot;.to_owned()),
+    );
+
+    let on_description = json!({
+        &quot;@type&quot;: &quot;OnOffProperty&quot;,
+        &quot;title&quot;: &quot;On/Off&quot;,
+        &quot;type&quot;: &quot;boolean&quot;,
+        &quot;description&quot;: &quot;Whether the lamp is turned on&quot;
+    });
+    let on_description = on_description.as_object().unwrap().clone();
+    thing.add_property(Box::new(BaseProperty::new(
+        &quot;on&quot;.to_owned(),
+        json!(true),
+        None,
+        Some(on_description),
+    )));
+
+    let brightness_description = json!({
+        &quot;@type&quot;: &quot;BrightnessProperty&quot;,
+        &quot;title&quot;: &quot;Brightness&quot;,
+        &quot;type&quot;: &quot;integer&quot;,
+        &quot;description&quot;: &quot;The level of light from 0-100&quot;,
+        &quot;minimum&quot;: 0,
+        &quot;maximum&quot;: 100,
+        &quot;unit&quot;: &quot;percent&quot;
+    });
+    let brightness_description = brightness_description.as_object().unwrap().clone();
+    thing.add_property(Box::new(BaseProperty::new(
+        &quot;brightness&quot;.to_owned(),
+        json!(50),
+        None,
+        Some(brightness_description),
+    )));
+
+    let fade_metadata = json!({
+        &quot;title&quot;: &quot;Fade&quot;,
+        &quot;description&quot;: &quot;Fade the lamp to a given level&quot;,
+        &quot;input&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;required&quot;: [
+                &quot;brightness&quot;,
+                &quot;duration&quot;
+            ],
+            &quot;properties&quot;: {
+                &quot;brightness&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;,
+                    &quot;minimum&quot;: 0,
+                    &quot;maximum&quot;: 100,
+                    &quot;unit&quot;: &quot;percent&quot;
+                },
+                &quot;duration&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;,
+                    &quot;minimum&quot;: 1,
+                    &quot;unit&quot;: &quot;milliseconds&quot;
+                }
+            }
+        }
+    });
+    let fade_metadata = fade_metadata.as_object().unwrap().clone();
+    thing.add_available_action(&quot;fade&quot;.to_owned(), fade_metadata);
+
+    let overheated_metadata = json!({
+        &quot;description&quot;: &quot;The lamp has exceeded its safe operating temperature&quot;,
+        &quot;type&quot;: &quot;number&quot;,
+        &quot;unit&quot;: &quot;degree celsius&quot;
+    });
+    let overheated_metadata = overheated_metadata.as_object().unwrap().clone();
+    thing.add_available_event(&quot;overheated&quot;.to_owned(), overheated_metadata);
+
+    Arc::new(RwLock::new(Box::new(thing)))
+    }
+
+    #[actix_rt::main]
+    async fn main() -&gt; std::io::Result&lt;()&gt; {
+    env_logger::init();
+    let thing = make_thing();
+
+    // If adding more than one thing, use ThingsType::Multiple() with a name.
+    // In the single thing case, the thing's name will be broadcast.
+    let mut server = WebThingServer::new(
+        ThingsType::Single(thing),
+        Some(8888),
+        None,
+        None,
+        Box::new(Generator),
+        None,
+    );
+    server.start(None).await
+    }
+
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../java/" class="btn btn-neutral float-left" title="Java"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../arduino/" class="btn btn-neutral float-right" title="Arduino">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../java/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../arduino/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

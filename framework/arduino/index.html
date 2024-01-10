@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/framework/arduino/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Arduino - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Arduino";
+        var mkdocs_page_input_path = "framework/arduino.md";
+        var mkdocs_page_url = "/docs/framework/arduino/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../gateway/hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Arduino</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#arduino-ide">Arduino IDE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#platformio">PlatformIO</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Framework</li>
+      <li class="breadcrumb-item active">Arduino</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="webthing-arduino">webthing-arduino</h1>
+<h2 id="installation">Installation</h2>
+<h3 id="arduino-ide">Arduino IDE</h3>
+<p>Add the <code>webthing</code> and <code>ArduinoJson</code> libraries to your project.</p>
+<h3 id="platformio">PlatformIO</h3>
+<p>Add the <code>webthing-arduino</code> and <code>ArduinoJson</code> libraries to your project.</p>
+<h2 id="example">Example</h2>
+<pre><code>
+
+#define LARGE_JSON_BUFFERS 1
+
+    #include &lt;Arduino.h&gt;
+    #include &lt;Thing.h&gt;
+    #include &lt;WebThingAdapter.h&gt;
+
+    #ifdef ESP32
+    #include &lt;analogWrite.h&gt;
+    #endif
+
+    const char *ssid = &quot;......&quot;;
+    const char *password = &quot;..........&quot;;
+
+    #if defined(LED_BUILTIN)
+    const int lampPin = LED_BUILTIN;
+    #else
+    const int lampPin = 13; // manually configure LED pin
+    #endif
+
+    ThingActionObject *action_generator(DynamicJsonDocument *);
+
+    WebThingAdapter *adapter;
+
+    const char *lampTypes[] = {&quot;OnOffSwitch&quot;, &quot;Light&quot;, nullptr};
+    ThingDevice lamp(&quot;urn:dev:ops:my-lamp-1234&quot;, &quot;My Lamp&quot;, lampTypes);
+
+    ThingProperty lampOn(&quot;on&quot;, &quot;Whether the lamp is turned on&quot;, BOOLEAN,
+                     &quot;OnOffProperty&quot;);
+    ThingProperty lampLevel(&quot;brightness&quot;, &quot;The level of light from 0-100&quot;, INTEGER,
+                        &quot;BrightnessProperty&quot;);
+
+    StaticJsonDocument&lt;256&gt; fadeInput;
+    JsonObject fadeInputObj = fadeInput.to&lt;JsonObject&gt;();
+    ThingAction fade(&quot;fade&quot;, &quot;Fade&quot;, &quot;Fade the lamp to a given level&quot;,
+                 &quot;FadeAction&quot;, &amp;fadeInputObj, action_generator);
+    ThingEvent overheated(&quot;overheated&quot;,
+                      &quot;The lamp has exceeded its safe operating temperature&quot;,
+                      NUMBER, &quot;OverheatedEvent&quot;);
+
+    bool lastOn = true;
+
+    void setup(void) {
+    pinMode(lampPin, OUTPUT);
+    digitalWrite(lampPin, HIGH);
+    Serial.begin(115200);
+    Serial.println(&quot;&quot;);
+    Serial.print(&quot;Connecting to \&quot;&quot;);
+    Serial.print(ssid);
+    Serial.println(&quot;\&quot;&quot;);
+    #if defined(ESP8266) || defined(ESP32)
+    WiFi.mode(WIFI_STA);
+    #endif
+    WiFi.begin(ssid, password);
+    Serial.println(&quot;&quot;);
+
+    // Wait for connection
+    while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(&quot;.&quot;);
+    }
+
+    Serial.println(&quot;&quot;);
+    Serial.print(&quot;Connected to &quot;);
+    Serial.println(ssid);
+    Serial.print(&quot;IP address: &quot;);
+    Serial.println(WiFi.localIP());
+    adapter = new WebThingAdapter(&quot;led-lamp&quot;, WiFi.localIP());
+
+    lamp.description = &quot;A web connected lamp&quot;;
+
+    lampOn.title = &quot;On/Off&quot;;
+    lamp.addProperty(&amp;lampOn);
+
+    lampLevel.title = &quot;Brightness&quot;;
+    lampLevel.minimum = 0;
+    lampLevel.maximum = 100;
+    lampLevel.unit = &quot;percent&quot;;
+    lamp.addProperty(&amp;lampLevel);
+
+    fadeInputObj[&quot;type&quot;] = &quot;object&quot;;
+    JsonObject fadeInputProperties =
+      fadeInputObj.createNestedObject(&quot;properties&quot;);
+    JsonObject brightnessInput =
+      fadeInputProperties.createNestedObject(&quot;brightness&quot;);
+    brightnessInput[&quot;type&quot;] = &quot;integer&quot;;
+    brightnessInput[&quot;minimum&quot;] = 0;
+    brightnessInput[&quot;maximum&quot;] = 100;
+    brightnessInput[&quot;unit&quot;] = &quot;percent&quot;;
+    JsonObject durationInput =
+      fadeInputProperties.createNestedObject(&quot;duration&quot;);
+    durationInput[&quot;type&quot;] = &quot;integer&quot;;
+    durationInput[&quot;minimum&quot;] = 1;
+    durationInput[&quot;unit&quot;] = &quot;milliseconds&quot;;
+    lamp.addAction(&amp;fade);
+
+    overheated.unit = &quot;degree celsius&quot;;
+    lamp.addEvent(&amp;overheated);
+
+    adapter-&gt;addDevice(&amp;lamp);
+    adapter-&gt;begin();
+
+    Serial.println(&quot;HTTP server started&quot;);
+    Serial.print(&quot;http://&quot;);
+    Serial.print(WiFi.localIP());
+    Serial.print(&quot;/things/&quot;);
+    Serial.println(lamp.id);
+
+    #ifdef analogWriteRange
+    analogWriteRange(255);
+    #endif
+
+    // set initial values
+    ThingPropertyValue initialOn = {.boolean = true};
+    lampOn.setValue(initialOn);
+    (void)lampOn.changedValueOrNull();
+
+    ThingPropertyValue initialLevel = {.integer = 50};
+    lampLevel.setValue(initialLevel);
+    (void)lampLevel.changedValueOrNull();
+
+    analogWrite(lampPin, 128);
+
+    randomSeed(analogRead(0));
+    }
+
+    void loop(void) {
+    adapter-&gt;update();
+    bool on = lampOn.getValue().boolean;
+    if (on) {
+    int level = map(lampLevel.getValue().number, 0, 100, 255, 0);
+    analogWrite(lampPin, level);
+    } else {
+    analogWrite(lampPin, 255);
+    }
+
+    if (lastOn != on) {
+    lastOn = on;
+    }
+    }
+
+    void do_fade(const JsonVariant &amp;input) {
+    JsonObject inputObj = input.as&lt;JsonObject&gt;();
+    long long int duration = inputObj[&quot;duration&quot;];
+    long long int brightness = inputObj[&quot;brightness&quot;];
+
+    delay(duration);
+
+    ThingDataValue value = {.integer = brightness};
+    lampLevel.setValue(value);
+    int level = map(brightness, 0, 100, 255, 0);
+    analogWrite(lampPin, level);
+
+    ThingDataValue val;
+    val.number = 102;
+    ThingEventObject *ev = new ThingEventObject(&quot;overheated&quot;, NUMBER, val);
+    lamp.queueEventObject(ev);
+    }
+
+    ThingActionObject *action_generator(DynamicJsonDocument *input) {
+    return new ThingActionObject(&quot;fade&quot;, input, do_fade, nullptr);
+    }
+
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../rust/" class="btn btn-neutral float-left" title="Rust"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../micropython/" class="btn btn-neutral float-right" title="MicroPython">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../rust/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../micropython/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/gateway/installation/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installation - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "gateway/installation.md";
+        var mkdocs_page_url = "/docs/gateway/installation/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#raspberry-pi">Raspberry Pi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-download-image">1. Download Image</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-flash-image">2. Flash Image</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-boot-raspberry-pi">3. Boot Raspberry Pi</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../setup/">First Time Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Gateway</li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation">Installation</h1>
+<p>The recommended ways to install WebThings Gateway are to either use a pre-built OS image for a <a href="#raspberry-pi">Raspberry Pi</a>, or install the <a href="#docker">Docker</a> image. Alternatively you can <a href="https://github.com/WebThingsIO/gateway/blob/master/README.md#prerequisites-for-building">build it from the source code</a> yourself.</p>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<p><img alt="Illustration of a Raspberry Pi single board computer, a microSD card and a USB dongle" src="../images/components.png" /></p>
+<p>To install WebThings Gateway on a Raspberry Pi you will need:</p>
+<ol>
+<li>A <strong><a href="https://www.raspberrypi.com/products/">Raspberry Pi®</a></strong> single board computer (Raspberry Pi 3 or 4 recommended, Pi 5 not yet supported) and power supply</li>
+<li>A <strong>microSD card</strong> (At least 8GB, class 10 recommended)</li>
+<li><strong>USB dongles</strong> (Optional, see the list of <a href="../supported-hardware">supported hardware</a>)</li>
+</ol>
+<p><strong>🗒️ Note:</strong> The Raspberry Pi 3 and 4 come with Wi-Fi and Bluetooth radios. The USB dongles are needed if you want to support other smart home protocols like Zigbee and Z-Wave.</p>
+<h3 id="1-download-image">1. Download Image</h3>
+<p>First download the latest gateway image from the <a href="https://webthings.io/gateway/">WebThings website</a>.</p>
+<h3 id="2-flash-image">2. Flash Image</h3>
+<p>Next you will need to flash the downloaded image onto your microSD card. There are <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">various methods</a> of doing this but we recommend using <a href="https://etcher.balena.io/">Etcher</a>.</p>
+<p><img alt="Screenshot of the Etcher user interface showing an .img file as the source and a card reader as the target" src="../images/etcher_screenshot.png" /></p>
+<ol>
+<li>Open Etcher</li>
+<li>Insert your SD card into an SD card reader attached to your computer</li>
+<li>Select the downloaded image as the source file</li>
+<li>Select your SD card as the target</li>
+<li>Click "Flash!"</li>
+</ol>
+<p>Once flashing is complete, remove the microSD card.</p>
+<h3 id="3-boot-raspberry-pi">3. Boot Raspberry Pi</h3>
+<p><img alt="An illustration showing first inserting the microSD card, then inserting a USB dongle then plugging in the power supply" src="../images/assembly.png" /></p>
+<ol>
+<li>Insert the flashed microSD card into your Raspberry Pi</li>
+<li>Plug in any USB dongles</li>
+<li>Connect the power supply to boot the Pi</li>
+<li>Check that the LEDs light up: red indicates power, green indicates activity</li>
+<li>Wait a few minutes for the software to boot</li>
+</ol>
+<p><strong>🗒️ Note:</strong> On first boot the Raspberry Pi may take an additional 2-3 minutes longer to boot in order to take care of some first time setup.</p>
+<h2 id="docker">Docker</h2>
+<p>To install WebThings Gateway on Docker, follow the <a href="https://hub.docker.com/r/webthingsio/gateway">instructions on Docker Hub</a>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction/" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup/" class="btn btn-neutral float-right" title="First Time Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

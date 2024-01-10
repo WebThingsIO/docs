@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://webthings.io/docs/gateway/setup/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>First Time Setup - WebThings Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" />
+        <link href="../../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "First Time Setup";
+        var mkdocs_page_input_path = "gateway/setup.md";
+        var mkdocs_page_url = "/docs/gateway/setup/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/logo.svg" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">WebThings Gateway</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">First Time Setup</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-connect-wi-fi-optional">1. Connect Wi-Fi (Optional)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-register-a-subdomain-optional">2. Register a Subdomain (Optional)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-create-a-user-account">3. Create a User Account</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-in/">Log In</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../things/">Things</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rules/">Rules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logs/">Logs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../floorplan/">Floorplan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log-out/">Log Out</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../supported-hardware/">Supported Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hacking/">Development</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">WebThings Framework</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/introduction/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/node-js/">Node.js</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/python/">Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/java/">Java</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/rust/">Rust</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/arduino/">Arduino</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../framework/micropython/">MicroPython</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">W3C Web of Things</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wot/introduction/">Introduction</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">WebThings Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">WebThings Gateway</li>
+      <li class="breadcrumb-item active">First Time Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="first-time-setup">First Time Setup</h1>
+<p>The first time your gateway boots it will require some configuration.</p>
+<h2 id="1-connect-wi-fi-optional">1. Connect Wi-Fi (Optional)</h2>
+<p>When the gateway starts up it will create a Wi-Fi hotspot called "<strong>WebThings Gateway XXXX</strong>" (where XXXX are four digits from your Raspberry Pi's MAC address). Use a smartphone, tablet or desktop computer to scan for and connect to that wireless network.</p>
+<p><img alt="A screenshot from a desktop operating system showing the user selecting a Wi-Fi hotspot called WebThings Gateway 16D1" src="../images/wifi_ssid.png" /></p>
+<p>A captive portal page will appear, showing nearby Wi-Fi networks.</p>
+<p><img alt="A screenshot showing the names of nearby Wi-Fi networks" src="../images/connect_wifi.png" /></p>
+<p>Select the desired network and enter a password if prompted. The "Connecting to Wi-Fi..." page should automatically disappear.</p>
+<p>Or to skip connecting to a Wi-Fi network (if already connected via Ethernet), click the "Skip" button (you can reconfigure Wi-Fi later from <a href="../settings">Settings</a>).</p>
+<p>After you've connected your gateway to a wireless network, you should ensure that your smartphone, tablet or desktop computer is connected to the same Wi-Fi network and then navigate to <a href="http://gateway.local">http://gateway.local</a> in your web browser to access the gateway's web interface.</p>
+<p><strong>🗒️ Notes:</strong> </p>
+<ul>
+<li>If you are connected to the "WebThings Gateway XXXX" Wi-Fi network but you don't see the captive portal, you can try typing "http://192.168.2.1" into your web browser's address bar to manually navigate to the page.</li>
+<li>As an alternative to Wi-Fi, you can connect the Raspberry Pi to your home network using an Ethernet cable and it will attempt to automatically get an IP address from your router.</li>
+<li>If you're not able to access "http://gateway.local" (e.g. on Microsoft Windows), you may need to look up the IP address assigned to the Raspberry Pi by your router (look for a hostname of “gateway” or a MAC address starting with “b8:27:eb”), and type that into the address bar of your web browser instead.</li>
+<li>If neither "http://gateway.local" or "http://{IP ADDRESS}" will load in your browser, check to make sure your computer is definitely connected to the same network you connected the gateway to.</li>
+<li>If you move the gateway to another location and it can no longer access your home network, it will revert to access point mode so you can connect to it and re-configure a different network.</li>
+</ul>
+<h2 id="2-register-a-subdomain-optional">2. Register a Subdomain (Optional)</h2>
+<p>When you load "http://gateway.local" for the first time, you will be given the option to register a free subdomain to safely access your gateway over the Internet using a secure tunnelling service.</p>
+<p><img alt="A screenshot showing a form to choose a subdomain of webthings.io and enter an email address" src="../images/choose_subdomain.png" /></p>
+<p>Enter your choice of subdomain and an email address in case you need to retrieve your subdomain later to re-install on a new gateway. You will also need to agree to the WebThings Privacy Policy and Terms of Service in order to use the back end services provided by the community. Click “Create” and wait a few moments for the subdomain registration to complete. You should then be redirected to your new subdomain.</p>
+<p><strong>🗒️ Notes:</strong></p>
+<ul>
+<li>You can choose to skip this step (either to only use the gateway locally on your home network or manually configure DNS yourself), but note that currently if you do skip this step you’ll have to re-flash the gateway in order to register a subdomain</li>
+<li>If you have previously registered a subdomain you want to re-use, enter the subdomain and the email address you used to register it and follow the on-screen instructions to re-claim it</li>
+</ul>
+<h2 id="3-create-a-user-account">3. Create a User Account</h2>
+<p>The gateway will next prompt you to create your first user account. Enter a name, email address and a password and click "Next".</p>
+<p><img alt="A screenshot showing a form to enter a name, email address and password" src="../images/create_user.png" /></p>
+<p><strong>🗒️ Note:</strong> You can create additional user accounts later.</p>
+<p><strong>Success!</strong></p>
+<p>Once your user account has been successfully created, you will be automatically logged in to the gateway and you should see an empty Things screen, ready for you to start adding devices.</p>
+<p><img alt="A screenshot showing an empty screen with a main menu and an add button" src="../images/empty_things_screen.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../log-in/" class="btn btn-neutral float-right" title="Log In">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../log-in/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
