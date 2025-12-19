@@ -47,7 +47,13 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#raspberry-pi">Raspberry Pi</a>
+    <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#snap">Snap</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-from-source">Build from Source</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#os-images-for-raspberry-pi">OS images for Raspberry Pi</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-download-image">1. Download Image</a>
     </li>
@@ -56,8 +62,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#3-boot-raspberry-pi">3. Boot Raspberry Pi</a>
     </li>
         </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a>
     </li>
     </ul>
                   </li>
@@ -129,10 +133,74 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="installation">Installation</h1>
-<p>The recommended ways to install WebThings Gateway are to either use a pre-built OS image for a <a href="#raspberry-pi">Raspberry Pi</a>, or install the <a href="#docker">Docker</a> image. Alternatively you can <a href="https://github.com/WebThingsIO/gateway/blob/master/README.md#prerequisites-for-building">build it from the source code</a> yourself.</p>
-<h2 id="raspberry-pi">Raspberry Pi</h2>
+<p>As of the 2.0 release the recommended way to install WebThings Gateway is to use the <a href="#docker">Docker image</a>. There is also an experimental <a href="#snap">snap package</a>, or you can choose to <a href="#build-from-source">build from source</a>.</p>
+<h2 id="docker">Docker</h2>
+<p><img src="../images/webthings_gateway_docker.svg" alt="WebThings Gateway Docker" style="width: 100%; max-width: 250px; display: block; margin: 20px auto;"></p>
+<p>Once you have <a href="https://docs.docker.com/engine/install/">installed Docker Engine</a> on your host operating system of choice, downloading and running the <a href="https://hub.docker.com/r/webthingsio/gateway">WebThings Gateway Docker image</a> can be achieved with a single command.</p>
+<p>On Linux:</p>
+<pre><code>docker run \
+    -d \
+    -e TZ=America/Los_Angeles \
+    -v /path/to/shared/data:/home/node/.webthings \
+    --network=&quot;host&quot; \
+    --log-opt max-size=1m \
+    --log-opt max-file=10 \
+    --name webthings-gateway \
+    webthingsio/gateway:latest
+</code></pre>
+<p>On Windows or macOS:</p>
+<pre><code>docker run \
+    -d \
+    -p 8080:8080 \
+    -p 4443:4443 \
+    -e TZ=America/Los_Angeles \
+    -v /path/to/shared/data:/home/node/.webthings \
+    --log-opt max-size=1m \
+    --log-opt max-file=10 \
+    --name webthings-gateway \
+    webthingsio/gateway:latest
+</code></pre>
+<p>You should change <code>/path/to/shared/data</code> to the location where you would like the gateway to store its local data, e.g. a folder in your home directory.</p>
+<p>Once the image has been downloaded and started you should be able to configure the gateway by loading its web interface at <a href="https://localhost:8080">https://localhost:8080</a>.</p>
+<p>For more options such as customising the timezone, customising the ports the gateway runs on, or giving the Docker image access to certain hardware, please see the <a href="https://github.com/WebThingsIO/gateway/blob/master/README.docker.md">Docker README</a>.</p>
+<h2 id="snap">Snap</h2>
+<p><img src="../images/webthings_gateway_snap.svg" alt="WebThings Gateway Snap" style="width: 100%; max-width: 250px; display: block; margin: 20px auto;"></p>
+<p>As of the 2.0 release there is also an experimental <a href="https://snapcraft.io/webthings-gateway">snap package</a> which you can install on your Linux distribution of choice.</p>
+<p>On Ubuntu Server/Ubuntu Desktop:</p>
+<pre><code>$ sudo snap install --edge webthings-gateway
+$ sudo snap connect webthings-gateway:system-observe
+$ sudo snap connect webthings-gateway:hardware-observe
+$ sudo snap connect webthings-gateway:network-manager
+$ sudo snap set system experimental.hotplug=true
+$ sudo snap restart webthings-gateway
+</code></pre>
+<p>On Ubuntu Core:</p>
+<pre><code>$ snap install --edge webthings-gateway
+$ snap install network-manager
+$ snap connect webthings-gateway:system-observe
+$ snap connect webthings-gateway:hardware-observe
+$ snap connect webthings-gateway:network-manager network-manager:service
+$ sudo snap set system experimental.hotplug=true
+$ snap restart webthings-gateway
+</code></pre>
+<p>Once the snap package has been installed you should be able to configure the gateway by loading its web interface at <a href="https://localhost:8080">https://localhost:8080</a>.</p>
+<p>The snap is currently untested on other Linux distributions.</p>
+<p>For more options such as giving the snap access to USB devices, please see the <a href="https://github.com/WebThingsIO/gateway/blob/master/README.snap.md">snap README</a>.</p>
+<h2 id="build-from-source">Build from Source</h2>
+<p><img src="../images/webthings_gateway_source.svg" alt="WebThings Gateway Source" style="width: 100%; max-width: 250px; display: block; margin: 20px auto;"></p>
+<p>To build the gateway from source code, please see the <a href="https://github.com/WebThingsIO/gateway/blob/master/README.md#prerequisites-for-building">README</a>.</p>
+<p>Essentially, once you have installed all the build dependencies it's a case of running:</p>
+<pre><code>$ git clone https://github.com/WebThingsIO/gateway.git
+$ cd gateway
+$ npm ci
+$ npm start
+</code></pre>
+<p>The gateway's web interface should then be available at <a href="http://localhost:8080">http://localhost:8080</a> by default.</p>
+<h2 id="os-images-for-raspberry-pi">OS images for Raspberry Pi</h2>
+<p><img src="../images/webthings_gateway_pi.svg" alt="WebThings Gateway for Raspberry Pi" style="width: 100%; max-width: 250px; display: block; margin: 20px auto;"></p>
+<p>⚠️ <strong>Note:</strong> Older versions of the gateway were shipped as a full OS image which could be flashed onto a Raspberry Pi. These images are not currently available for WebThings Gateway 2.0.</p>
 <p><img alt="Illustration of a Raspberry Pi single board computer, a microSD card and a USB dongle" src="../images/components.png" /></p>
-<p>To install WebThings Gateway on a Raspberry Pi you will need:</p>
+<p>To install WebThings Gateway 1.x on a Raspberry Pi you will need:</p>
 <ol>
 <li>A <strong><a href="https://www.raspberrypi.com/products/">Raspberry Pi®</a></strong> single board computer (Raspberry Pi 3 or 4 recommended, Pi 5 not yet supported) and power supply</li>
 <li>A <strong>microSD card</strong> (At least 8GB, class 10 recommended)</li>
@@ -140,7 +208,7 @@
 </ol>
 <p><strong>🗒️ Note:</strong> The Raspberry Pi 3 and 4 come with Wi-Fi and Bluetooth radios. The USB dongles are needed if you want to support other smart home protocols like Zigbee and Z-Wave.</p>
 <h3 id="1-download-image">1. Download Image</h3>
-<p>First download the latest gateway image from the <a href="https://webthings.io/gateway/">WebThings website</a>.</p>
+<p>First download the latest 1.x gateway image from the <a href="https://webthings.io/gateway/">WebThings website</a>.</p>
 <h3 id="2-flash-image">2. Flash Image</h3>
 <p>Next you will need to flash the downloaded image onto your microSD card. There are <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">various methods</a> of doing this but we recommend using <a href="https://etcher.balena.io/">Etcher</a>.</p>
 <p><img alt="Screenshot of the Etcher user interface showing an .img file as the source and a card reader as the target" src="../images/etcher_screenshot.png" /></p>
@@ -162,8 +230,6 @@
 <li>Wait a few minutes for the software to boot</li>
 </ol>
 <p><strong>🗒️ Note:</strong> On first boot the Raspberry Pi may take an additional 2-3 minutes longer to boot in order to take care of some first time setup.</p>
-<h2 id="docker">Docker</h2>
-<p>To install WebThings Gateway on Docker, follow the <a href="https://hub.docker.com/r/webthingsio/gateway">instructions on Docker Hub</a>.</p>
               
             </div>
           </div><footer>
