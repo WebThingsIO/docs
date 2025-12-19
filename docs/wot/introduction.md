@@ -29,4 +29,4 @@ These specifications were designed to fulfill a collection of [Use Cases and Req
 
 In addition to the specifications written by the WoT Working Group, there is a specification being incubated by the [Web Thing Protocol Communtiy Group](https://www.w3.org/community/web-thing-protocol/) which defines a common protocol for the Web of Things called the Web Thing Protocol:
 
-- [Web Thing Protocol Use Cases & Requirements](https://www.w3.org/community/reports/web-thing-protocol/CG-FINAL-web-thing-protocol-requirements-20231101/)
+- [Web Thing Protocol](https://w3c.github.io/web-thing-protocol/)

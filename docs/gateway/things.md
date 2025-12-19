@@ -2,6 +2,8 @@
 
 On the WebThings platform, connected devices are referred to as "things".
 
+**🗒️ Note:** When using the Docker image or snap package, you won't be able to add any Things until you have installed at least one adapter [add-on](../settings/#add-ons), since they don't currently come bundled with any add-ons by default.
+
 ## Add Thing
 
 To add a thing to your gateway, click the "+" button on the Things screen. This will tell the gateway to start scanning for new devices.
@@ -22,9 +24,9 @@ If you click the back button at the top left of the screen to go back to the Thi
 
 ![A screenshot showing an icon for a Living Room Light](images/things_screen-single_thing.png)
 
-**🗒️ Note:** Only the Zigbee, Z-Wave and Web Thing add-on adapters are installed by default. To support other types of devices, you will need to install additional [add-ons](../settings#add-ons).
-
 ### Add Thing by URL
+
+**🗒️ Note:** When using the Docker image or snap package, you will need to first install the Web Thing adapter add-on.
 
 In addition to scanning for new devices, you can manually add a new thing by its "web thing URL". That is the URL of a [Web Thing Description](https://webthings.io/api/#web-thing-description).
 
@@ -109,6 +111,18 @@ You will then be asked to confirm the removal of the device from the gateway.
 ![Screenshot of the confirm remove thing dialog with a remove button](images/confirm_remove_thing.png)
 
 **🗒️ Note:** Whilst removing a device from the gateway using the remove thing feature will remove it from the gateway user interface, it might not always fully un-pair it from the gateway at the hardware level (e.g. if using a USB dongle). Sometimes a device will have an un-pairing procedure which needs to be followed in order to full disassociate it from the gateway (e.g. involving pressing a button on the device).
+
+## Groups
+
+As of version 2.0 it is possible to organise Things into groups. You can create a group by clicking the big "+" button at the bottom right of the Things screen and then clicking "Add group".
+
+![Screenshot of the Add group button](images/add_group.png)
+
+You can then drag and drop Things into groups and organise them however you like.
+
+![Screenshot of Things organised into two groups](images/view_groups.png)
+
+To edit or remove a group click the overlow menu (...) at the top right of the group's box.
 
 
 
